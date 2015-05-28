@@ -1,0 +1,16 @@
+{
+  "name": "dear-diary",
+  "version": "1.0.0",
+  "description": "keeper of secrets",
+  "main": "index.js",
+  "preferGlobal": true,
+  "bin": {
+    "dear-diary": "bin/cli"
+  },
+  "author": "Mary White",
+  "license": "ISC",
+  "dependencies": {
+    "commander": "^2.8.1",
+    "nedb": "^1.1.2"
+  }
+}
