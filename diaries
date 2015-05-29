@@ -1,26 +1,9 @@
-{"entry":"hello","time":"May 29, 2015","_id":"4pGjFx3igcLktHtz"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"7JaQYxdfdRkJngqJ"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"9qbPBa0ejx1vascP"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"CFrgsQ8T0pjYPLTP"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"CTWjQ13JmIJnLfXc"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"FRk7xXVHtX0N2CWj"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"FrwqAEWu7SC9b86I"}
-{"entry":"hello","date":"May 29, 2015","_id":"GtUvXuDBL6Jp913j"}
-{"entry":"hahahahahaha","date":"May 29, 2015","_id":"OWdiXxcj8KuJclM8"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"R1qP8OAm2rcNfqAy"}
-{"entry":"hello","_id":"SxOZs81YyBKMMuCv"}
-{"entry":"hello","_id":"bdWV6r7Iw9eQx275"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"bmw8Ngrs1jAq7Nwd"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"cd8Ulu2egJhmuo8z"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"fTBLjNCJty4tFFZC"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"fjsk8BNSDeUBJWBe"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"flPdA0jR2ABhLKUf"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"fy6MKYDoYLi3ah3G"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"gcoVe9rhsfNvhGrm"}
-{"entry":"khdfkjwnoflkncppiwjef","date":"May 29, 2015","_id":"hQU4692aftNxBoZb"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"hd1QVXuY6rTuA8n8"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"hfrkNg2YuTPoWpJh"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"jCoEl7ngHBtTMCiM"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"p210N9KcqaUpCrrg"}
-{"name":"Mary","locale":"USA","color":"pink","_id":"sIuqwr6LirhXY4ah"}
-{"entry":"gq3rg2","date":"May 29, 2015","_id":"m7B06MuNtHq3Co5t"}
+{"entry":"two","date":{"$$date":1432913382198},"_id":"L7S7V0dxiJRpUnx8"}
+{"entry":"sup","date":"May 29, 2014","_id":"Ot9yVSD7X5vXUcp1"}
+{"entry":"okay","date":"May 29, 2012","_id":"QuWbOxAOn8QXXvTS"}
+{"entry":"three","date":{"$$date":1432913387832},"_id":"TvOxKkiwPxNxbuNz"}
+{"entry":"HAHAHOGKNWB","date":"May 29, 2015","_id":"ZMHmlrV3vHLa04BM"}
+{"entry":"hello","date":"May 29, 2015","_id":"ZqkMNnp3cCua2usF"}
+{"entry":"four","date":{"$$date":1432913398350},"_id":"iYBxL84e3IBck9Ed"}
+{"entry":"okay","date":{"$$date":1432913344997},"_id":"kIHMTafhLxMSnR7w"}
+{"entry":"one","date":{"$$date":1432913294046},"_id":"vuC1fKpLgCSuOdOy"}
