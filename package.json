@@ -10,6 +10,7 @@
   "author": "Mary White",
   "license": "ISC",
   "dependencies": {
+    "chalk": "^1.0.0",
     "commander": "^2.8.1",
     "inquirer": "^0.8.5",
     "moment": "^2.10.3",
