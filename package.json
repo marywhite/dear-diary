@@ -1,13 +1,22 @@
 {
   "name": "dear-diary",
-  "version": "1.0.0",
+  "keywords": ["love", "beauty", "diary"],
+  "version": "0.1.1",
+  "homepage": "https://github.com/marywhite/dear-diary",
+  "author": {
+    "name": "mary white",
+    "email": "maryk.december@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/marywhite/dear-diary.git"
+  },
   "description": "keeper of secrets",
   "main": "index.js",
   "preferGlobal": true,
   "bin": {
     "dear-diary": "bin/cli"
   },
-  "author": "Mary White",
   "license": "ISC",
   "dependencies": {
     "ansi-regex": "^1.1.1",
