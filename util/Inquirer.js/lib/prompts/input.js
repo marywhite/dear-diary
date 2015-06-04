@@ -100,7 +100,7 @@ Prompt.prototype.onError = function( state ) {
  */
 
 Prompt.prototype.onKeypress = function() {
-  //this.cacheCursorPos();
-  //this.clean().render().write( this.rl.line );
-  //this.restoreCursorPos();
+  this.cacheCursorPos();
+  this.clean().render().write( this.rl.line );
+  this.restoreCursorPos();
 };
