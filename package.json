@@ -1,7 +1,11 @@
 {
   "name": "dear-diary",
-  "keywords": ["love", "beauty", "diary"],
-  "version": "0.1.2",
+  "keywords": [
+    "love",
+    "beauty",
+    "diary"
+  ],
+  "version": "0.1.3",
   "homepage": "https://github.com/marywhite/dear-diary",
   "author": {
     "name": "mary white",
