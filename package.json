@@ -21,7 +21,7 @@
   "bin": {
     "dear-diary": "bin/cli"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "ansi-regex": "^1.1.1",
     "bcrypt": "^0.8.3",
