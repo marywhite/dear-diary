@@ -5,7 +5,7 @@
     "beauty",
     "diary"
   ],
-  "version": "0.1.10",
+  "version": "0.1.11",
   "homepage": "https://github.com/marywhite/dear-diary",
   "author": {
     "name": "mary white",
@@ -37,5 +37,6 @@
     "readline2": "^0.1.1",
     "rx": "^2.5.3",
     "through": "^2.3.7"
-  }
+  },
+  "scripts": {}
 }
