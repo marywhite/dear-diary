@@ -135,9 +135,7 @@ Prompt.prototype.onError = function ( state ) {
 };
 
 Prompt.prototype.getCurrentValue = function () {
-  var choices = this.opt.choices.filter(function( choice ) {
-    return !!choice.checked && !choice.disabled;
-  });
+  var choices = this.opt.choices.where({ checked: true });
 
   this.selection = _.pluck(choices, "name");
   return _.pluck(choices, "value");
