@@ -1,4 +1,4 @@
-# eating-cli
+# dear-diary
 a simple tool for keeping secrets. 
 
 ## Install
