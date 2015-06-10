@@ -58,22 +58,11 @@ Prompt.prototype._run = function( cb ) {
  * @return {Prompt} self
  */
 
-Prompt.prototype.render = function (error) {
-  var cursor = 0;
+Prompt.prototype.render = function() {
   var message = this.getQuestion();
+  utils.writeMessage( this, message );
 
-  if (this.status === 'answered') {
-    message += chalk.cyan(this.answer);
-  } else {
-    message += this.rl.line;
-  }
-
-  if (error) {
-    message += '\n' + chalk.red('>> ') + error;
-    cursor++;
-  }
-
-  this.screen.render(message, { cursor: cursor });
+  return this;
 };
 
 
@@ -90,19 +79,20 @@ Prompt.prototype.filterInput = function( input ) {
 
 Prompt.prototype.onEnd = function( state ) {
   this.filter( state.value, function( filteredValue ) {
-    this.answer = filteredValue;
     this.status = "answered";
 
     // Re-render prompt
-    this.render();
+    this.clean(1).render();
 
-    this.screen.done();
+    // Render answer
+    this.write( chalk.cyan(filteredValue) + "\n" );
+
     this.done( state.value );
   }.bind(this));
 };
 
 Prompt.prototype.onError = function( state ) {
-  this.render(state.isValid);
+  this.error( state.isValid ).clean().render();
 };
 
 /**
@@ -110,5 +100,7 @@ Prompt.prototype.onError = function( state ) {
  */
 
 Prompt.prototype.onKeypress = function() {
-  this.render();
+  //this.cacheCursorPos();
+  //this.clean().render().write( this.rl.line );
+  //this.restoreCursorPos();
 };

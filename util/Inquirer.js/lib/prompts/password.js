@@ -9,13 +9,6 @@ var Base = require("./base");
 var utils = require("../utils/utils");
 var observe = require("../utils/events");
 
-function mask(input) {
-  if (input.length === 0) {
-    return '';
-  }
-  return new Array(input.length + 1).join('*');
-}
-
 /**
  * Module exports
  */
@@ -55,6 +48,7 @@ Prompt.prototype._run = function( cb ) {
 
   // Init
   this.render();
+  this.rl.output.mute();
 
   return this;
 };
@@ -65,22 +59,48 @@ Prompt.prototype._run = function( cb ) {
  * @return {Prompt} self
  */
 
-Prompt.prototype.render = function (error) {
-  var cursor = 0;
+Prompt.prototype.render = function() {
   var message = this.getQuestion();
+  utils.writeMessage( this, message );
 
-  if (this.status === 'answered') {
-    message += chalk.cyan(mask(this.answer));
-  } else {
-    message += mask(this.rl.line || '');
+  return this;
+};
+
+
+/**
+ * When user press `enter` key
+ */
+
+Prompt.prototype.onSubmit = function( input ) {
+  var value = input;
+  if ( !value ) {
+    var value = this.opt.default != null ? this.opt.default : "";
   }
 
-  if (error) {
-    message += '\n' + chalk.red('>> ') + error;
-    cursor++;
-  }
+  this.rl.output.unmute();
+  this.write("\n"); // manually output the line return as the readline was muted
 
-  this.screen.render(message, { cursor: cursor });
+  this.validate( value, function( isValid ) {
+    if ( isValid === true ) {
+      this.status = "answered";
+
+      // Re-render prompt
+      this.clean(1).render();
+
+      // Mask answer
+      var mask = new Array( value.toString().length + 1 ).join("*");
+
+      // Render answer
+      this.write( chalk.cyan(mask) + "\n" );
+
+      this.lineObs.dispose();
+      this.keypressObs.dispose();
+      this.done( value );
+    } else {
+      this.error( isValid ).clean().render();
+      this.rl.output.mute();
+    }
+  }.bind(this));
 };
 
 /**
@@ -95,19 +115,29 @@ Prompt.prototype.filterInput = function( input ) {
 };
 
 Prompt.prototype.onEnd = function( state ) {
+  this.rl.output.unmute();
+  this.write("\n"); // manually output the line return as the readline was muted
+
   this.status = "answered";
-  this.answer = state.value;
 
   // Re-render prompt
-  this.render();
+  this.clean(1).render();
 
-  this.screen.done();
+  // Mask answer
+  var mask = new Array( state.value.toString().length + 1 ).join("*");
+
+  // Render answer
+  this.write( chalk.cyan(mask) + "\n" );
+
   this.done( state.value );
 };
 
 Prompt.prototype.onError = function( state ) {
-  this.render(state.isValid);
   this.rl.output.unmute();
+  this.write("\n"); // manually output the line return as the readline was muted
+
+  this.error( state.isValid ).clean().render();
+  this.rl.output.mute();
 };
 
 /**
@@ -115,5 +145,9 @@ Prompt.prototype.onError = function( state ) {
  */
 
 Prompt.prototype.onKeypress = function() {
-  this.render();
+  this.rl.output.unmute();
+  this.cacheCursorPos().clean().render();
+  var mask = new Array( this.rl.line.length + 1 ).join("*");
+  this.write(mask).restoreCursorPos();
+  this.rl.output.mute();
 };

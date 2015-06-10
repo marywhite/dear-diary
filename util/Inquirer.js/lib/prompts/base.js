@@ -11,7 +11,6 @@ var readline = require("readline");
 var cliWidth = require("cli-width");
 var utils = require("../utils/utils");
 var Choices = require("../objects/choices");
-var ScreenManager = require("../utils/screen-manager");
 var tty = require("../utils/tty");
 
 /**
@@ -54,7 +53,6 @@ function Prompt( question, rl, answers ) {
   }
 
   this.rl = rl;
-  this.screen = new ScreenManager(this.rl);
 
   return this;
 }
@@ -221,7 +219,8 @@ Prompt.prototype.suffix = function( str ) {
  */
 
 Prompt.prototype.getQuestion = function() {
-  var message = chalk.green("?") + " " + chalk.bold(this.opt.message) + " ";
+
+  var message = _.compose(this.prefix, this.suffix)(chalk.bold(this.opt.message));
 
   // Append the default if available, and if question isn't answered
   if ( this.opt.default != null && this.status !== "answered" ) {
