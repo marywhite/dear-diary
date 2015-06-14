@@ -26,12 +26,12 @@ to read...
  dear-diary read
  ```
 valid date inputs include
--<enter>
--all
--this week | this month | this year
--mOnDay
--February 4 2015
--2/14/2015 || 2-14-2015
+* [enter] | all
+* today | yesterday
+* last
+* this week | this month | this year
+* mOnDay
+* 2/14/2015 | 2-14-2015
 
 if you forget your password...
  ```
