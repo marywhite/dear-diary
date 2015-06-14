@@ -27,6 +27,8 @@ to read...
  ```
 valid date inputs include
 * [enter] | all
+* today | yesterday
+* last
 * this week | this month | this year
 * mOnDay
 * 2/14/2015 | 2-14-2015
