@@ -26,7 +26,7 @@ to read...
  dear-diary read
  ```
 valid date inputs include
-* <enter> | all
+* [enter] | all
 * this week | this month | this year
 * mOnDay
 * 2/14/2015 | 2-14-2015
