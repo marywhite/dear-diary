@@ -1,7 +1,7 @@
 # dear-diary
 a simple tool for keeping secrets. 
 
-![alt tag](https://raw.github.com/marywhite/dear-diary/master/img/diary.png)
+![command line diary entry](https://raw.github.com/marywhite/dear-diary/master/img/diary.png)
 
 ## Install
 ```
